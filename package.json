@@ -1,48 +1,30 @@
 {
   "name": "element-plus-tiptap",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
+  "version": "1.0.0",
+  "description": "a rich text editor based on tiptap and element-plus. 一个基于tiptap和element-plus的富文本编辑器",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --fix",
-    "format": "prettier --write src/"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@element-plus/icons-vue": "^2.3.1",
-    "@jamescoyle/vue-icon": "^0.1.2",
-    "@mdi/js": "^7.4.47",
-    "@tiptap/extension-highlight": "^2.11.9",
-    "@tiptap/extension-image": "^2.11.9",
-    "@tiptap/extension-link": "^2.11.9",
-    "@tiptap/extension-subscript": "^2.11.9",
-    "@tiptap/extension-superscript": "^2.11.9",
-    "@tiptap/extension-table": "^2.11.9",
-    "@tiptap/extension-table-cell": "^2.11.9",
-    "@tiptap/extension-table-header": "^2.11.9",
-    "@tiptap/extension-table-row": "^2.11.9",
-    "@tiptap/extension-task-item": "^2.11.9",
-    "@tiptap/extension-task-list": "^2.11.9",
-    "@tiptap/extension-underline": "^2.11.9",
-    "@tiptap/starter-kit": "^2.11.9",
-    "@tiptap/vue-3": "^2.11.9",
-    "element-plus": "^2.9.9",
-    "tiptap-markdown": "^0.8.10",
-    "vue": "^3.5.13",
-    "vue-router": "^4.5.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TinyWisp/element-plus-tiptap.git"
   },
-  "devDependencies": {
-    "@eslint/js": "^9.22.0",
-    "@vitejs/plugin-vue": "^5.2.3",
-    "@vitejs/plugin-vue-jsx": "^4.1.2",
-    "@vue/eslint-config-prettier": "^10.2.0",
-    "eslint": "^9.22.0",
-    "eslint-plugin-vue": "~10.0.0",
-    "globals": "^16.0.0",
-    "prettier": "3.5.3",
-    "vite": "^6.2.4",
-    "vite-plugin-vue-devtools": "^7.7.2"
-  }
+  "keywords": [
+    "tiptap",
+    "element-plus",
+    "rich text",
+    "editor",
+    "vue"
+  ],
+  "workspaces": [
+    "packages/editor",
+    "packages/demo"
+  ],
+  "author": "TinyWisp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TinyWisp/element-plus-tiptap/issues"
+  },
+  "homepage": "https://github.com/TinyWisp/element-plus-tiptap#readme"
 }

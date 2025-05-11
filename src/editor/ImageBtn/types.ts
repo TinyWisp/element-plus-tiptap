@@ -1,1 +1,0 @@
-export type FnUpload = (file: File) => (string | Promise<string>)
