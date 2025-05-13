@@ -65,7 +65,6 @@ import LinkBtn from './LinkBtn/index.js'
 import ImageBtn from './ImageBtn/index.js'
 import Icon from './Icon.vue'
 import VNodeRenderer from './VNodeRenderer.vue'
-import './style.css'
 
 import {
   mdiUndo,
@@ -123,7 +122,7 @@ const props = defineProps({
    * content
    */
   modelValue: {
-    type: String,
+    type: [String, Object],
     default: '',
   },
 
@@ -181,6 +180,17 @@ const props = defineProps({
     type: Array,
     required: false,
     default: () => [],
+  },
+
+  /**
+   * options for tiptap
+   */
+  options: {
+    type: Object,
+    required: false,
+    default: () => {
+      return {}
+    },
   },
 
   /**
@@ -266,6 +276,7 @@ const editor = useEditor({
         break
     }
   },
+  ...props.options,
 })
 
 watch(
@@ -275,11 +286,7 @@ watch(
       return
     }
 
-    if (props.editable) {
-      editor.value.setOptions({ editable: true, autoFocus: true })
-    } else {
-      editor.value.setOptions({ editable: false, autoFocus: false })
-    }
+    editor.value.setEditable(props.editable)
   },
 )
 
@@ -807,6 +814,7 @@ const context = {
   },
 }
 provide('context', context)
+defineExpose({ context })
 </script>
 
 <style scoped>

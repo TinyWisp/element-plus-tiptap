@@ -1,6 +1,11 @@
 <template>
-  <mdi-js-icon v-if="computedIcon.type === 'path'" :path="computedIcon.path" />
-  <v-node-renderer v-else-if="computedIcon.type === 'vnode'" :vnodes="[computedIcon.vnode]" />
+  <img v-if="computedIcon.type === 'url'" :src="computedIcon.url" class="icon" />
+  <mdi-js-icon v-else-if="computedIcon.type === 'path'" :path="computedIcon.path" class="icon" />
+  <v-node-renderer
+    v-else-if="computedIcon.type === 'vnode'"
+    :vnodes="[computedIcon.vnode]"
+    class="icon"
+  />
 </template>
 
 <script setup>
@@ -16,7 +21,17 @@ const props = defineProps({
 })
 
 const computedIcon = computed(() => {
-  if (typeof props.icon === 'string') {
+  const httpPattern = /^https{0,1}:\/\//
+
+  if (
+    typeof props.icon === 'string' &&
+    (httpPattern.test(props.icon) || props.icon.startsWith('data:image/'))
+  ) {
+    return {
+      type: 'url',
+      url: props.icon,
+    }
+  } else if (typeof props.icon === 'string') {
     return {
       type: 'path',
       path: props.icon,
@@ -46,3 +61,9 @@ const computedIcon = computed(() => {
   }
 })
 </script>
+
+<style scoped>
+.icon {
+  max-height: 100%;
+}
+</style>
