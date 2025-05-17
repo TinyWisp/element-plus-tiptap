@@ -5,14 +5,14 @@
 
 `element-plus-tiptap` is a rich text editor based on Vue 3, Tiptap, and Element Plus. It's simple and easy to use.
 
-- [Docs](https://tinywisp.github.io/element-plus-tiptap/en)
+- [Docs](https://tinywisp.github.io/element-plus-tiptap/#en)
 - [Getting Started](#getting-started)
 
 ---
 
 `element-plus-tiptap` 是一个富文本编辑器，它基于vue3, titap和element-plus。使用起来很简单。
 
-- [文档](https://tinywisp.github.io/element-plus-tiptap/cn)
+- [文档](https://tinywisp.github.io/element-plus-tiptap/#cn)
 - [快速开始](#快速开始)
 
 ---

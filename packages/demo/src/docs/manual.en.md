@@ -20,19 +20,19 @@ import 'element-plus-tiptap/dist/theme.css'
 **Basic Usage**
 
 ```iframe
-/demo?name=getting-started
+#/demo?name=getting-started
 ```
 
 ## Custom Toolbar
 
 ```iframe
-/demo?name=custom-toolbar
+#/demo?name=custom-toolbar
 ```
 
 ## Language
 
 ```iframe
-/demo?name=lang
+#/demo?name=lang
 ```
 
 ## Input/Output Format
@@ -40,19 +40,19 @@ import 'element-plus-tiptap/dist/theme.css'
 **html**
 
 ```iframe
-/demo?name=html
+#/demo?name=html
 ```
 
 **json**
 
 ```iframe
-/demo?name=json
+#/demo?name=json
 ```
 
 **markdown**
 
 ```iframe
-/demo?name=markdown
+#/demo?name=markdown
 ```
 
 ## API

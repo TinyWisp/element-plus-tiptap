@@ -20,19 +20,19 @@ import 'element-plus-tiptap/dist/theme.css'
 **基础用法**
 
 ```iframe
-/demo?name=getting-started
+#/demo?name=getting-started
 ```
 
 ## 自定义工具栏
 
 ```iframe
-/demo?name=custom-toolbar
+#/demo?name=custom-toolbar
 ```
 
 ## 自定义语言
 
 ```iframe
-/demo?name=lang
+#/demo?name=lang
 ```
 
 ## 输入/输出格式
@@ -40,19 +40,19 @@ import 'element-plus-tiptap/dist/theme.css'
 **html**
 
 ```iframe
-/demo?name=html
+#/demo?name=html
 ```
 
 **json**
 
 ```iframe
-/demo?name=json
+#/demo?name=json
 ```
 
 **markdown**
 
 ```iframe
-/demo?name=markdown
+#/demo?name=markdown
 ```
 
 ## API
