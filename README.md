@@ -1,5 +1,8 @@
 # element-plus-tiptap
 
+[![GitHub](https://img.shields.io/github/license/tinywisp/element-plus-tiptap)](https://github.com/TinyWisp/element-plus-tiptap/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/v/element-plus-tiptap)](https://www.npmjs.com/package/element-plus-tiptap)
+
 `element-plus-tiptap` is a rich text editor based on Vue 3, Tiptap, and Element Plus. It's simple and easy to use.
 
 - [Docs](https://tinywisp.github.io/element-plus-tiptap/en)
