@@ -108,6 +108,7 @@ const demoHeight = computed(() => {
   align-items: stretch;
   border: 1px solid lightgray;
   border-radius: 3px;
+  background-color: white;
 }
 .demo {
   width: 100%;

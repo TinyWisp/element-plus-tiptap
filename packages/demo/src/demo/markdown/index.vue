@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import { ElementPlusTiptap } from '@tinywisp/element-plus-tiptap'
-import '@tinywisp/element-plus-tiptap/dist/theme.css'
+import { ElementPlusTiptap } from 'element-plus-tiptap'
+import 'element-plus-tiptap/dist/theme.css'
 
 const content = ref('# hello world!')
 </script>
@@ -15,5 +15,7 @@ const content = ref('# hello world!')
     type="textarea"
     placeholder=""
   />
-  <element-plus-tiptap v-model="content" type="markdown" />
+  <div style="width: 100%; height: 400px">
+    <element-plus-tiptap v-model="content" type="markdown" />
+  </div>
 </template>

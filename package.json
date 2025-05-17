@@ -1,5 +1,5 @@
 {
-  "name": "element-plus-tiptap",
+  "name": "element-plus-tiptap-packages",
   "version": "1.0.0",
   "description": "a rich text editor based on tiptap and element-plus. 一个基于tiptap和element-plus的富文本编辑器",
   "main": "index.js",

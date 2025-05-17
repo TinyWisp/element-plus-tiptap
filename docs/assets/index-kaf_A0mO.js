@@ -1,10 +1,10 @@
-<script setup>
+const t=`<script setup>
 import { ref } from 'vue'
 import { ElementPlusTiptap } from 'element-plus-tiptap'
 import 'element-plus-tiptap/dist/theme.css'
 
 const content = ref('<h1>hello world!</h1>')
-</script>
+<\/script>
 
 <template>
   <el-input
@@ -19,3 +19,4 @@ const content = ref('<h1>hello world!</h1>')
     <element-plus-tiptap v-model="content" type="html" />
   </div>
 </template>
+`;export{t as default};

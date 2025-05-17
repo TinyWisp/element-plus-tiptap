@@ -1,19 +1,21 @@
 <script setup>
 import { ref } from 'vue'
-import { ElementPlusTiptap } from '@tinywisp/element-plus-tiptap'
-import '@tinywisp/element-plus-tiptap/dist/theme.css'
+import { ElementPlusTiptap } from 'element-plus-tiptap'
+import 'element-plus-tiptap/dist/theme.css'
 
 const content = ref({})
 </script>
 
 <template>
   <el-input
-    :model-value="content"
+    :model-value="JSON.stringify(content)"
     style="width: 100%"
     :rows="10"
     :readonly="true"
     type="textarea"
     placeholder=""
   />
-  <element-plus-tiptap v-model="content" type="json" />
+  <div style="width: 100%; height: 400px">
+    <element-plus-tiptap v-model="content" type="json" />
+  </div>
 </template>

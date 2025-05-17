@@ -1,54 +1,61 @@
-# 简介
+## 简介
 
-element-plus-tiptap 是一个基于vue3, tiptap和element-plus的富文本编辑器, 简单易用。
+`element-plus-tiptap` 是一个基于vue3, tiptap和element-plus的富文本编辑器, 简单易用。
 
-# 快速开始
+## 快速开始
 
-安装
+**安装**
 
 ```bash
 npm install element-plus-tiptap
 ```
 
-基础用法
+**引入**
+
+```javascript
+import { ElementPlusTiptap } from 'element-plus-tiptap'
+import 'element-plus-tiptap/dist/theme.css'
+```
+
+**基础用法**
 
 ```iframe
 /demo?name=getting-started
 ```
 
-# 自定义工具栏
+## 自定义工具栏
 
 ```iframe
 /demo?name=custom-toolbar
 ```
 
-# 自定义语言
+## 自定义语言
 
 ```iframe
 /demo?name=lang
 ```
 
-# 输入/输出格式
+## 输入/输出格式
 
-## html
+**html**
 
 ```iframe
 /demo?name=html
 ```
 
-## json
+**json**
 
-```json
+```iframe
 /demo?name=json
 ```
 
-## markdown
+**markdown**
 
-```markdown
+```iframe
 /demo?name=markdown
 ```
 
-# API
+## API
 
 **属性**
 
@@ -66,9 +73,9 @@ npm install element-plus-tiptap
 
 该属性表示工具栏上的项，它是一个数组。它的元素，可以是String, Component, VNode, Object.
 
-- String，表示内置的工具栏项的名称。
-- Object, 表示自定义工具栏项
-- Component, 自定义组件
+- `String`: 表示内置的工具栏项的名称。
+- `Object`: 表示自定义工具栏项
+- `Component`: 自定义组件
 
 Object元素，其属性如下
 
@@ -80,7 +87,7 @@ Object元素，其属性如下
 | isDisabled | (context) => boolean   | 是否禁用             | -      |                                                                                                                                                                            |
 | exec       | (context) => void      | 点击按钮时执行的方法 | -      |                                                                                                                                                                            |
 
-## 内置的工具栏项
+### 内置的工具栏项
 
 | 名称             | 说明             |
 | ---------------- | ---------------- |
@@ -123,7 +130,7 @@ Object元素，其属性如下
 | deleteRow        | 删除行           |
 | mergeOrSplitCell | 合并或分割单元格 |
 
-## context
+### context
 
 - context是一个对像，包含了可能需要的各种资源
 

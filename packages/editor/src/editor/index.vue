@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="toolbar">
+  <div class="ept-container">
+    <div class="ept-toolbar">
       <template v-for="(item, idx) of calcToolbarItems" :key="item.name + idx">
         <!-- divider -->
         <el-divider direction="vertical" v-if="item.name === 'divider'" />
@@ -29,8 +29,10 @@
       </template>
     </div>
 
-    <div class="content">
-      <editor-content :editor="editor" />
+    <div class="ept-content">
+      <el-scrollbar>
+        <editor-content :editor="editor" />
+      </el-scrollbar>
     </div>
   </div>
 </template>
@@ -823,33 +825,45 @@ defineExpose({ context })
 </script>
 
 <style scoped>
-.toolbar {
+.ept-toolbar {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid #e0e0e0;
+  flex-grow: 0;
+  flex-shrink: 0;
   --el-fill-color-light: #f0f0f0;
 }
-.toolbar > button,
-.toolbar > div {
+.ept-toolbar > button,
+.ept-toolbar > div {
   flex-shrink: 0;
   flex-grow: 0;
 }
-.toolbar > .spacer {
+.ept-toolbar > .spacer {
   flex-shrink: 1;
   flex-grow: 1;
 }
-.toolbar > :deep(.el-button + .el-button) {
+.ept-toolbar > :deep(.el-button + .el-button) {
   margin-left: 0;
 }
-.content {
-  padding: 16px;
-  min-height: 200px;
+.ept-content {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100px;
+  padding: 0 0 0 16px;
+  overflow: hidden;
 }
-.container {
+.ept-container {
   border: 1px solid lightgray;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 :deep(div.tiptap[role='textbox']) {
   outline: 0;

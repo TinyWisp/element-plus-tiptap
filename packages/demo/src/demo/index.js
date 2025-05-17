@@ -1,7 +1,7 @@
 const demoMap = {
   'getting-started': {
     comp: () => import('./getting-started/index.vue'),
-    height: 'auto',
+    height: '300px',
     codeTabs: [
       {
         title: 'index.vue',
@@ -11,7 +11,7 @@ const demoMap = {
   },
   'custom-toolbar': {
     comp: () => import('./custom-toolbar/index.vue'),
-    height: 'auto',
+    height: '300px',
     codeTabs: [
       {
         title: 'index.vue',
@@ -55,7 +55,7 @@ const demoMap = {
   },
   lang: {
     comp: () => import('./lang/index.vue'),
-    height: 'auto',
+    height: '300px',
     codeTabs: [
       {
         title: 'index.vue',
