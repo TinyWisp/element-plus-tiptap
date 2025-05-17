@@ -1,6 +1,6 @@
 {
   "name": "element-plus-tiptap",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": false,
   "type": "module",
   "scripts": {
@@ -13,6 +13,23 @@
   "main": "./dist/index.js",
   "browser": "./dist/index.js",
   "module": "./dist/index.js",
+  "keywords": [
+    "tiptap",
+    "element-plus",
+    "rich text",
+    "editor",
+    "vue"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TinyWisp/element-plus-tiptap.git"
+  },
+  "author": "TinyWisp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TinyWisp/element-plus-tiptap/issues"
+  },
+  "homepage": "https://github.com/TinyWisp/element-plus-tiptap#readme",
   "dependencies": {
     "@jamescoyle/vue-icon": "^0.1.2",
     "@mdi/js": "^7.4.47",
