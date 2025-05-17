@@ -21,12 +21,7 @@ const props = defineProps({
 })
 
 const computedIcon = computed(() => {
-  const httpPattern = /^https{0,1}:\/\//
-
-  if (
-    typeof props.icon === 'string' &&
-    (httpPattern.test(props.icon) || props.icon.startsWith('data:image/'))
-  ) {
+  if (typeof props.icon === 'string' && props.icon.includes('/')) {
     return {
       type: 'url',
       url: props.icon,

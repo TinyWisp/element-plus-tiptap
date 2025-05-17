@@ -30,7 +30,7 @@ export default {
     splitCell: 'Split Cell',
     mergeCells: 'Merge Cells',
     horizontalRule: 'Horizontal Rule',
-    insertNetworkImage: 'Insert a Network Image',
+    insertNetworkImage: 'Insert Network Image',
     uploadLocalImage: 'Upload Local Image',
   },
   insertLinkDialog: {
@@ -43,8 +43,10 @@ export default {
         placeholder: 'title',
       },
       url: {
-        label: 'url',
+        label: 'URL',
         placeholder: 'https://',
+        emptyErr: 'Please input the URL.',
+        invalidErr: 'A valid url must start with "http://" or "https://".',
       },
     },
   },
@@ -58,8 +60,10 @@ export default {
         placeholder: 'title',
       },
       url: {
-        label: 'url',
+        label: 'URL',
         placeholder: 'https://',
+        emptyErr: 'Please input the URL.',
+        invalidErr: 'A valid URL must start with "http://" or "https://".',
       },
     },
   },

@@ -20,12 +20,7 @@
           :content="typeof item.tip === 'string' ? item.tip : item.tip?.()"
           v-else
         >
-          <el-button
-            @click="clickToolbarButton(item)"
-            text
-            :bg="isActive(item)"
-            :disabled="isDisabled(item)"
-          >
+          <el-button @click="exec(item)" text :bg="isActive(item)" :disabled="isDisabled(item)">
             <template v-slot:icon>
               <icon :icon="item.icon"></icon>
             </template>
@@ -54,6 +49,8 @@ import Superscript from '@tiptap/extension-superscript'
 import Highlight from '@tiptap/extension-highlight'
 import TaskItem from '@tiptap/extension-task-item'
 import TaskList from '@tiptap/extension-task-list'
+import Color from '@tiptap/extension-color'
+import TextStyle from '@tiptap/extension-text-style'
 import { Markdown } from 'tiptap-markdown'
 import { useEditor, EditorContent } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
@@ -239,15 +236,10 @@ let extensions = [
   Highlight,
   TaskItem,
   TaskList,
+  Color,
+  TextStyle,
 ]
-if (props.exts) {
-  const userExtNameMap = {}
-  props.exts.forEach((userExt) => {
-    userExtNameMap[userExt.name] = 1
-  })
-  extensions = extensions.filter((item) => !userExtNameMap[item.name])
-  extensions = [...extensions, ...props.exts]
-}
+
 if (props.type === 'markdown') {
   extensions.push(
     Markdown.configure({
@@ -255,6 +247,15 @@ if (props.type === 'markdown') {
       transformCopiedText: true,
     }),
   )
+}
+
+if (props.exts) {
+  const userExtNameMap = {}
+  props.exts.forEach((userExt) => {
+    userExtNameMap[userExt.name] = 1
+  })
+  extensions = extensions.filter((item) => !userExtNameMap[item.name])
+  extensions = [...extensions, ...props.exts]
 }
 
 const editor = useEditor({
@@ -721,6 +722,9 @@ const toolbarItemMap = {
   '|': {
     name: 'divider',
   },
+  ' ': {
+    name: 'spacer',
+  },
 }
 
 const calcToolbarItems = computed(() => {
@@ -765,17 +769,18 @@ const calcToolbarItems = computed(() => {
       return
     }
 
+    if (typeof val === 'object' && toolbarItemMap[val.name]) {
+      items.push({
+        ...toolbarItemMap[val.name],
+        ...val,
+      })
+      return
+    }
     items.push(val)
   })
 
   return items
 })
-
-function clickToolbarButton(item) {
-  if (item.exec) {
-    item.exec()
-  }
-}
 
 function isActive(item) {
   if (!item.isActive || !editor.value) {
@@ -793,12 +798,12 @@ function isDisabled(item) {
   return item.isDisabled(editor.value)
 }
 
-function exec(item, params) {
+function exec(item) {
   if (!item.exec || !editor.value) {
     return null
   }
 
-  return item.exec(editor.value, params)
+  return item.exec(context)
 }
 
 //--------------------------context-------------------------

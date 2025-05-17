@@ -1,7 +1,7 @@
 <template>
   <el-popover placement="bottom" trigger="hover" width="auto">
     <template #reference>
-      <el-button text>
+      <el-button text :disabled="isDisabled(item)" :bg="isActive(item)">
         <template #icon>
           <icon :icon="item.icon" />
         </template>
@@ -20,9 +20,10 @@ import Icon from '../Icon.vue'
 export default {
   setup() {
     const context = inject('context')
-    const { editor, t } = context
+    const { editor, t, toolbar } = context
+    const { isActive, isDisabled } = toolbar
 
-    return { editor, t }
+    return { editor, t, isActive, isDisabled }
   },
   components: {
     InsertTableBoard,

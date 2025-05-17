@@ -36,6 +36,18 @@ export default {
     title: '图片',
     cancel: '取消',
     ok: '确定',
+    field: {
+      title: {
+        label: '标题',
+        placeholder: '请输入标题',
+      },
+      url: {
+        label: '地址',
+        placeholder: 'https://',
+        emptyErr: '请输入图片地址',
+        invalidErr: '图片地址必须以http://或https://开头',
+      },
+    },
   },
   insertLinkDialog: {
     title: '链接',
@@ -49,6 +61,8 @@ export default {
       url: {
         label: '地址',
         placeholder: 'https://',
+        emptyErr: '请输入图片地址',
+        invalidErr: '图片地址必须以http://或https://开头',
       },
     },
   },

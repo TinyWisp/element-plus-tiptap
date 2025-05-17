@@ -70,6 +70,7 @@ export default {
         row: this.curRow,
         col: this.curCol,
       })
+      this.hide()
     },
     doNothing() {},
   },
