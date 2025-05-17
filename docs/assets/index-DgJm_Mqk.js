@@ -1,0 +1,1 @@
+import{p as a}from"./theme-BaKnAX4m.js";import{r,c as t,o as n,u}from"./index-Cfbpt-BN.js";const d={__name:"index",setup(s){const e=r("hello world");return(p,o)=>(n(),t(u(a),{modelValue:e.value,"onUpdate:modelValue":o[0]||(o[0]=l=>e.value=l)},null,8,["modelValue"]))}};export{d as default};
