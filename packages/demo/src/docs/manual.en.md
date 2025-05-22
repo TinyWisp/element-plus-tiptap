@@ -62,12 +62,13 @@ import 'element-plus-tiptap/dist/theme.css'
 | 属性名       | 类型    | 说明                              | 默认值                | 备注                         |
 | ------------ | ------- | --------------------------------- | --------------------- | ---------------------------- |
 | type         | string  | enum values: html, json, markdown | html                  |                              |
-| editable     | boolean | whether it is editable or not     | true                  | -                            |
-| items        | array   | items of the toolbar              | ['undo', 'redo', ...] | -                            |
-| exts         | array   | extensions for tiptap             | []                    | -                            |
-| options      | object  | options for tiptap                | {}                    | -                            |
+| editable     | boolean | whether it is editable or not     | true                  |                              |
+| items        | array   | items of the toolbar              | ['undo', 'redo', ...] |                              |
+| exts         | array   | extensions for tiptap             | []                    |                              |
+| options      | object  | options for tiptap                | {}                    |                              |
 | locale       | string  | language                          | en                    | built-in languages:en, zh_CN |
-| langResource | object  | language resource                 | -                     |                              |
+| langResource | object  | language resource                 |                       |                              |
+| hideToolbar  | boolean | whether to hide the toolbar       | false                 |                              |
 
 **items**
 

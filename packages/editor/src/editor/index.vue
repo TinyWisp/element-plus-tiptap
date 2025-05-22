@@ -1,6 +1,6 @@
 <template>
   <div class="ept-container">
-    <div class="ept-toolbar">
+    <div :class="['ept-toolbar', { hide: hideToolbar }]">
       <template v-for="(item, idx) of calcToolbarItems" :key="item.name + idx">
         <!-- divider -->
         <el-divider direction="vertical" v-if="item.name === 'divider'" />
@@ -209,10 +209,18 @@ const props = defineProps({
     required: false,
     default: () => {},
   },
+
+  hideToolbar: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
 })
 
 //---------------------------editor--------------------------
 const emit = defineEmits(['update:modelValue'])
+const curContent = ref(props.modelValue)
+
 let extensions = [
   StarterKit.configure({
     link: false,
@@ -265,22 +273,42 @@ const editor = useEditor({
   editable: props.editable,
   extensions,
   onUpdate: () => {
-    switch (props.type) {
-      case 'markdown':
-        emit('update:modelValue', editor.value.storage.markdown.getMarkdown())
-        break
-
-      case 'html':
-        emit('update:modelValue', editor.value.getHTML())
-        break
-
-      case 'json':
-        emit('update:modelValue', editor.value.getJSON())
-        break
-    }
+    curContent.value = getContent()
   },
   ...props.options,
 })
+
+watch(
+  () => curContent.value,
+  () => {
+    emit('update:modelValue', curContent.value)
+  },
+)
+
+watch(
+  () => props.modelValue,
+  () => {
+    switch (props.type) {
+      case 'html':
+        if (props.modelValue !== curContent.value) {
+          editor.value.commands.setContent(props.modelValue)
+        }
+        break
+
+      case 'markdown':
+        if (props.modelValue !== curContent.value) {
+          editor.value.commands.setContent(props.modelValue)
+        }
+        break
+
+      case 'json':
+        if (JSON.stringify(props.modelValue) !== JSON.stringify(curContent.value)) {
+          editor.value.commands.setContent(props.modelValue)
+        }
+        break
+    }
+  },
+)
 
 watch(
   () => props.editable,
@@ -292,6 +320,19 @@ watch(
     editor.value.setEditable(props.editable)
   },
 )
+
+function getContent() {
+  switch (props.type) {
+    case 'markdown':
+      return editor.value.storage.markdown.getMarkdown()
+
+    case 'html':
+      return editor.value.getHTML()
+
+    case 'json':
+      return editor.value.getJSON()
+  }
+}
 
 onBeforeUnmount(() => {
   editor.value.destroy()
@@ -835,6 +876,9 @@ defineExpose({ context })
   flex-grow: 0;
   flex-shrink: 0;
   --el-fill-color-light: #f0f0f0;
+}
+.ept-toolbar.hide {
+  display: none;
 }
 .ept-toolbar > button,
 .ept-toolbar > div {

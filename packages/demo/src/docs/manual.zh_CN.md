@@ -67,7 +67,8 @@ import 'element-plus-tiptap/dist/theme.css'
 | exts         | array   | tiptap的扩展                 | []                    | -                     |
 | options      | object  | tiptap的配置项               | {}                    | -                     |
 | locale       | string  | 语言                         | en                    | 内置的语言有en, zh_CN |
-| langResource | object  | 语言资源                     | -                     |                       |
+| langResource | object  | 语言资源                     | -                     | -                     |
+| hideToolbar  | boolean | 是否隐藏工具栏               | false                 | -                     |
 
 **items属性**
 

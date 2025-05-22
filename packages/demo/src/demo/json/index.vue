@@ -3,7 +3,10 @@ import { ref } from 'vue'
 import { ElementPlusTiptap } from 'element-plus-tiptap'
 import 'element-plus-tiptap/dist/theme.css'
 
-const content = ref({})
+const content = ref({
+  type: 'doc',
+  content: [{ type: 'paragraph', content: [{ type: 'text', text: 'hello world!' }] }],
+})
 </script>
 
 <template>

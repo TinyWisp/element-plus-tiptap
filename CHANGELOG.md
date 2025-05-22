@@ -1,3 +1,10 @@
+- 1.0.3
+
+  - added:
+    - the hideToolbar prop
+  - fixed:
+    - the editor doesn't respond to the modelValue prop's change.
+
 - 1.0.2
 
   - changed:
