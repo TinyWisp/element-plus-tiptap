@@ -29,6 +29,12 @@ import 'element-plus-tiptap/dist/theme.css'
 #/demo?name=custom-toolbar
 ```
 
+## Auto Height
+
+```iframe
+#/demo?name=auto-height
+```
+
 ## Language
 
 ```iframe
@@ -59,16 +65,17 @@ import 'element-plus-tiptap/dist/theme.css'
 
 **Properties**
 
-| 属性名       | 类型    | 说明                              | 默认值                | 备注                         |
-| ------------ | ------- | --------------------------------- | --------------------- | ---------------------------- |
-| type         | string  | enum values: html, json, markdown | html                  |                              |
-| editable     | boolean | whether it is editable or not     | true                  |                              |
-| items        | array   | items of the toolbar              | ['undo', 'redo', ...] |                              |
-| exts         | array   | extensions for tiptap             | []                    |                              |
-| options      | object  | options for tiptap                | {}                    |                              |
-| locale       | string  | language                          | en                    | built-in languages:en, zh_CN |
-| langResource | object  | language resource                 |                       |                              |
-| hideToolbar  | boolean | whether to hide the toolbar       | false                 |                              |
+| 属性名       | 类型    | 说明                                     | 默认值                | 备注                         |
+| ------------ | ------- | ---------------------------------------- | --------------------- | ---------------------------- |
+| type         | string  | enum values: html, json, markdown        | html                  |                              |
+| editable     | boolean | whether it is editable or not            | true                  |                              |
+| items        | array   | items of the toolbar                     | ['undo', 'redo', ...] |                              |
+| exts         | array   | extensions for tiptap                    | []                    |                              |
+| options      | object  | options for tiptap                       | {}                    |                              |
+| locale       | string  | language                                 | en                    | built-in languages:en, zh_CN |
+| langResource | object  | language resource                        |                       |                              |
+| hideToolbar  | boolean | whether to hide the toolbar              | false                 |                              |
+| autoHeight   | boolean | whether to fit its height to its content | false                 |                              |
 
 **items**
 

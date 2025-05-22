@@ -1,3 +1,8 @@
+- 1.0.4
+
+  - added:
+    - the autoHeight prop
+
 - 1.0.3
 
   - added:

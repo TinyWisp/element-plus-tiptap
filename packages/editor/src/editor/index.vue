@@ -1,5 +1,5 @@
 <template>
-  <div class="ept-container">
+  <div :class="['ept-container', { 'auto-height': autoHeight }]">
     <div :class="['ept-toolbar', { hide: hideToolbar }]">
       <template v-for="(item, idx) of calcToolbarItems" :key="item.name + idx">
         <!-- divider -->
@@ -210,7 +210,19 @@ const props = defineProps({
     default: () => {},
   },
 
+  /**
+   * whether to hide the toolbar
+   */
   hideToolbar: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
+
+  /**
+   * whether to fit its height to its content
+   */
+  autoHeight: {
     type: Boolean,
     required: false,
     default: false,
@@ -895,7 +907,7 @@ defineExpose({ context })
 .ept-content {
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 100px;
+  flex-basis: 50px;
   padding: 0 0 0 16px;
   overflow: hidden;
 }
@@ -908,6 +920,12 @@ defineExpose({ context })
   justify-content: flex-start;
   box-sizing: border-box;
   overflow: hidden;
+}
+.ept-container.auto-height {
+  height: auto;
+}
+.ept-container.auto-height .ept-content {
+  overflow: visible;
 }
 :deep(div.tiptap[role='textbox']) {
   outline: 0;

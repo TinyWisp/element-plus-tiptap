@@ -23,6 +23,16 @@ const demoMap = {
       },
     ],
   },
+  'auto-height': {
+    comp: () => import('./auto-height/index.vue'),
+    height: 'auto',
+    codeTabs: [
+      {
+        title: 'index.vue',
+        code: () => import('./auto-height/index.vue?raw'),
+      },
+    ],
+  },
   html: {
     comp: () => import('./html/index.vue'),
     height: 'auto',

@@ -1,0 +1,1 @@
+import{r as a,c as r,o as t,u as n,f as u}from"./index-BBVewzRd.js";/* empty css              */const d={__name:"index",setup(s){const e=a("hello world");return(m,o)=>(t(),r(n(u),{modelValue:e.value,"onUpdate:modelValue":o[0]||(o[0]=l=>e.value=l)},null,8,["modelValue"]))}};export{d as default};

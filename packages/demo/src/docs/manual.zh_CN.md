@@ -29,6 +29,12 @@ import 'element-plus-tiptap/dist/theme.css'
 #/demo?name=custom-toolbar
 ```
 
+## 高度自增长
+
+```iframe
+#/demo?name=auto-height
+```
+
 ## 自定义语言
 
 ```iframe
@@ -61,7 +67,7 @@ import 'element-plus-tiptap/dist/theme.css'
 
 | 属性名       | 类型    | 说明                         | 默认值                | 备注                  |
 | ------------ | ------- | ---------------------------- | --------------------- | --------------------- |
-| type         | string  | 枚举值: html, json, markdown | html                  |                       |
+| type         | string  | 枚举值: html, json, markdown | html                  | -                     |
 | editable     | boolean | 是否可编辑                   | true                  | -                     |
 | items        | array   | 工具栏项                     | ['undo', 'redo', ...] | -                     |
 | exts         | array   | tiptap的扩展                 | []                    | -                     |
@@ -69,6 +75,7 @@ import 'element-plus-tiptap/dist/theme.css'
 | locale       | string  | 语言                         | en                    | 内置的语言有en, zh_CN |
 | langResource | object  | 语言资源                     | -                     | -                     |
 | hideToolbar  | boolean | 是否隐藏工具栏               | false                 | -                     |
+| autoHeight   | boolean | 高度是否随内容自动增长       | false                 | -                     |
 
 **items属性**
 
