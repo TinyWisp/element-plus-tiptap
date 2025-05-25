@@ -20,62 +20,82 @@ import 'element-plus-tiptap/dist/theme.css'
 **Basic Usage**
 
 ```iframe
-#/demo?name=getting-started
+/element-plus-tiptap/demo?name=getting-started
 ```
 
 ## Custom Toolbar
 
 ```iframe
-#/demo?name=custom-toolbar
-```
-
-## Auto Height
-
-```iframe
-#/demo?name=auto-height
+/element-plus-tiptap/demo?name=custom-toolbar
 ```
 
 ## Language
 
+### Simplified Chinese
+
 ```iframe
-#/demo?name=lang
+/element-plus-tiptap/demo?name=chinese
+```
+
+### Custom Language
+
+Currently, only English and Simplified Chinese are supported, and you can set them using `locale="en"` and `locale="zh_CN"`. If other languages are needed, the parameters `locale` and `langResource` must be used together to achieve this.
+
+```iframe
+/element-plus-tiptap/demo?name=lang
+```
+
+## Appearence
+
+### Size
+
+```iframe
+/element-plus-tiptap/demo?name=size
+```
+
+### Auto Height
+
+```iframe
+/element-plus-tiptap/demo?name=auto-height
 ```
 
 ## Input/Output Format
 
-**html**
+### html
 
 ```iframe
-#/demo?name=html
+/element-plus-tiptap/demo?name=html
 ```
 
-**json**
+### json
 
 ```iframe
-#/demo?name=json
+/element-plus-tiptap/demo?name=json
 ```
 
-**markdown**
+### markdown
 
 ```iframe
-#/demo?name=markdown
+/element-plus-tiptap/demo?name=markdown
 ```
 
 ## API
 
-**Properties**
+### Properties
 
-| 属性名       | 类型    | 说明                                     | 默认值                | 备注                         |
-| ------------ | ------- | ---------------------------------------- | --------------------- | ---------------------------- |
-| type         | string  | enum values: html, json, markdown        | html                  |                              |
-| editable     | boolean | whether it is editable or not            | true                  |                              |
-| items        | array   | items of the toolbar                     | ['undo', 'redo', ...] |                              |
-| exts         | array   | extensions for tiptap                    | []                    |                              |
-| options      | object  | options for tiptap                       | {}                    |                              |
-| locale       | string  | language                                 | en                    | built-in languages:en, zh_CN |
-| langResource | object  | language resource                        |                       |                              |
-| hideToolbar  | boolean | whether to hide the toolbar              | false                 |                              |
-| autoHeight   | boolean | whether to fit its height to its content | false                 |                              |
+| 属性名           | 类型             | 说明                                                                                                                                                                      | 默认值                | 备注                         |
+| ---------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | ---------------------------- |
+| type             | string           | enum values: html, json, markdown                                                                                                                                         | html                  |                              |
+| editable         | boolean          | whether it is editable or not                                                                                                                                             | true                  |                              |
+| items            | array            | items of the toolbar                                                                                                                                                      | ['undo', 'redo', ...] |                              |
+| exts             | array            | extensions for tiptap                                                                                                                                                     | []                    |                              |
+| options          | object           | options for tiptap                                                                                                                                                        | {}                    |                              |
+| locale           | string           | language                                                                                                                                                                  | en                    | built-in languages:en, zh_CN |
+| langResource     | object           | language resource                                                                                                                                                         |                       |                              |
+| hideToolbar      | boolean          | whether to hide the toolbar                                                                                                                                               | false                 |                              |
+| autoHeight       | boolean          | whether to fit its height to its content                                                                                                                                  | false                 |                              |
+| fnUploadImage    | (file) => string | a function to upload an image and return its url                                                                                                                          |                       |                              |
+| enablePasteImage | boolean          | whether to enable the image pasting handler. <br> if set to true, the editor will upload the pasted image through the fnUploadImage property and display it in the editor | true                  |                              |
 
 **items**
 
@@ -95,7 +115,7 @@ Attributes for Object Elements
 | isDisabled | (context) => boolean   | whether it is disabled or not | -             |                                                                                                                                                                                             |
 | exec       | (context) => void      | the method to execute         | -             |                                                                                                                                                                                             |
 
-### Built-in Items
+### Built-in Toolbar Items
 
 | Name             | Description          |
 | ---------------- | -------------------- |
@@ -140,7 +160,7 @@ Attributes for Object Elements
 
 ### context
 
-`context` is an object including containing various resources you might need
+`context` is an object containing various resources you might need
 
 | Property | Data Type              | Description                     |
 | -------- | ---------------------- | ------------------------------- |

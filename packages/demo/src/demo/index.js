@@ -33,6 +33,16 @@ const demoMap = {
       },
     ],
   },
+  size: {
+    comp: () => import('./size/index.vue'),
+    height: 'auto',
+    codeTabs: [
+      {
+        title: 'index.vue',
+        code: () => import('./size/index.vue?raw'),
+      },
+    ],
+  },
   html: {
     comp: () => import('./html/index.vue'),
     height: 'auto',
@@ -74,6 +84,16 @@ const demoMap = {
       {
         title: 'jp.js',
         code: () => import('./lang/jp.js?raw'),
+      },
+    ],
+  },
+  chinese: {
+    comp: () => import('./chinese/index.vue'),
+    height: '300px',
+    codeTabs: [
+      {
+        title: 'index.vue',
+        code: () => import('./chinese/index.vue?raw'),
       },
     ],
   },

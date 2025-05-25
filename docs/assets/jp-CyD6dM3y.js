@@ -4,7 +4,7 @@ const n=`export default {
     redo: 'やり直し',
     bold: '太字',
     italic: '斜体',
-    strike: '取り消し線',
+    strikethrough: '取り消し線',
     underline: '下線',
     subscript: '下付き文字',
     superscript: '上付き文字',

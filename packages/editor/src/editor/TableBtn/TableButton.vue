@@ -1,7 +1,7 @@
 <template>
-  <el-popover placement="bottom" trigger="hover" width="auto">
+  <el-popover v-model:visible="showBoard" placement="bottom" trigger="hover" width="auto">
     <template #reference>
-      <el-button text :disabled="isDisabled(item)" :bg="isActive(item)">
+      <el-button text :disabled="isDisabled(item)" :bg="isActive(item)" class="ept-toolbar-btn">
         <template #icon>
           <icon :icon="item.icon" />
         </template>
@@ -35,6 +35,11 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      showBoard: false,
+    }
+  },
   methods: {
     insertTable({ row, col }) {
       this.editor
@@ -46,6 +51,7 @@ export default {
           withHeaderRow: true,
         })
         .run()
+      this.showBoard = false
     },
   },
 }

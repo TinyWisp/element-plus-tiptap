@@ -4,7 +4,7 @@ export default {
     redo: 'Redo',
     bold: 'Strong',
     italic: 'Italic',
-    strike: 'Strikethrough',
+    strikethrough: 'Strikethrough',
     underline: 'Underline',
     subscript: 'Subscript',
     superscript: 'Superscript',

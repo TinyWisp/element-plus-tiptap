@@ -1,6 +1,6 @@
 <template>
   <el-dropdown @command="handleDropdownMenuCommand">
-    <el-button text class="btn">
+    <el-button text class="ept-toolbar-btn">
       <template #icon>
         <icon :icon="item.icon"></icon>
       </template>
@@ -44,9 +44,10 @@ import { mdiImage } from '@mdi/js'
 export default {
   setup() {
     const context = inject('context')
-    const { editor, t } = context
+    const { editor, t, props } = context
+    const { fnUploadImage } = props
 
-    return { editor, t }
+    return { editor, t, fnUploadImage }
   },
   components: {
     InsertNetworkImageDialog,
@@ -56,10 +57,6 @@ export default {
     item: {
       type: Object,
       required: true,
-    },
-    fnUploadImage: {
-      type: Function,
-      required: false,
     },
   },
   data() {
@@ -105,7 +102,7 @@ export default {
 </script>
 
 <style scoped>
-.btn {
+.ept-toolbar-btn {
   outline: none !important;
 }
 </style>

@@ -20,7 +20,14 @@
           :content="typeof item.tip === 'string' ? item.tip : item.tip?.()"
           v-else
         >
-          <el-button @click="exec(item)" text :bg="isActive(item)" :disabled="isDisabled(item)">
+          <el-button
+            @click="exec(item)"
+            text
+            :bg="isActive(item)"
+            :disabled="isDisabled(item)"
+            :style="item?.style"
+            :class="['ept-toolbar-btn', item?.class]"
+          >
             <template v-slot:icon>
               <icon :icon="item.icon"></icon>
             </template>
@@ -227,6 +234,29 @@ const props = defineProps({
     required: false,
     default: false,
   },
+
+  /**
+   * the function to upload an image and return its url
+   */
+  fnUploadImage: {
+    type: Function,
+    required: false,
+    default: function (file) {
+      if (file instanceof File) {
+        return URL.createObjectURL(file)
+      }
+      return null
+    },
+  },
+
+  /**
+   * whether to enable the default image pasting handler
+   */
+  enablePasteImage: {
+    type: Boolean,
+    required: false,
+    default: true,
+  },
 })
 
 //---------------------------editor--------------------------
@@ -280,10 +310,18 @@ if (props.exts) {
   extensions = [...extensions, ...props.exts]
 }
 
+let onPaste = undefined
+if (props.enablePasteImage && props.fnUploadImage) {
+  onPaste = (event) => {
+    handlePasteEvent(event)
+  }
+}
+
 const editor = useEditor({
   content: props.modelValue,
   editable: props.editable,
   extensions,
+  onPaste,
   onUpdate: () => {
     curContent.value = getContent()
   },
@@ -349,6 +387,25 @@ function getContent() {
 onBeforeUnmount(() => {
   editor.value.destroy()
 })
+
+//---------------------image pasting---------------------
+
+async function handlePasteEvent(event) {
+  if (!props.fnUploadImage || !props.enablePasteImage) {
+    return
+  }
+
+  if (event.clipboardData && event.clipboardData.items) {
+    for (const item of event.clipboardData.items) {
+      if (item.type.indexOf('image') >= 0) {
+        const file = item.getAsFile()
+        const url = await props.fnUploadImage(file)
+        editor.value.chain().focus().setImage({ src: url })
+        return true
+      }
+    }
+  }
+}
 
 //--------------------------i18n-------------------------
 const lang = new Lang()
@@ -888,6 +945,7 @@ defineExpose({ context })
   flex-grow: 0;
   flex-shrink: 0;
   --el-fill-color-light: #f0f0f0;
+  height: 32px;
 }
 .ept-toolbar.hide {
   display: none;
@@ -900,6 +958,10 @@ defineExpose({ context })
 .ept-toolbar > .spacer {
   flex-shrink: 1;
   flex-grow: 1;
+}
+.ept-toolbar:deep(.ept-toolbar-btn) {
+  width: 32px;
+  height: 24px;
 }
 .ept-toolbar > :deep(.el-button + .el-button) {
   margin-left: 0;

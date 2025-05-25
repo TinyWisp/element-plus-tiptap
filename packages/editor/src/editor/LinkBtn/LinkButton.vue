@@ -1,6 +1,12 @@
 <template>
   <el-tooltip :content="t('toolbar.link')" placement="bottom">
-    <el-button text :disabled="isDisabled(item)" :bg="isActive(item)" @click="showLinkDialog">
+    <el-button
+      text
+      :disabled="isDisabled(item)"
+      :bg="isActive(item)"
+      @click="showLinkDialog"
+      class="ept-toolbar-btn"
+    >
       <template #icon>
         <icon :icon="item.icon"></icon>
       </template>

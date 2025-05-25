@@ -1,3 +1,7 @@
+<template>
+  <element-plus-tiptap v-model="content" :items="items" />
+</template>
+
 <script setup>
 import { ref } from 'vue'
 import { ElementPlusTiptap } from 'element-plus-tiptap'
@@ -41,7 +45,3 @@ const items = [
 ]
 const content = ref('')
 </script>
-
-<template>
-  <element-plus-tiptap v-model="content" :items="items" />
-</template>

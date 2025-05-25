@@ -1,11 +1,3 @@
-<script setup>
-import { ref } from 'vue'
-import { ElementPlusTiptap } from 'element-plus-tiptap'
-import 'element-plus-tiptap/dist/theme.css'
-
-const content = ref('<h1>hello world!</h1>')
-</script>
-
 <template>
   <el-input
     :model-value="content"
@@ -19,3 +11,11 @@ const content = ref('<h1>hello world!</h1>')
     <element-plus-tiptap v-model="content" type="html" />
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import { ElementPlusTiptap } from 'element-plus-tiptap'
+import 'element-plus-tiptap/dist/theme.css'
+
+const content = ref('<h1>hello world!</h1>')
+</script>

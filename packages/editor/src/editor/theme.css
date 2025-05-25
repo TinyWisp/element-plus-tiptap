@@ -120,7 +120,7 @@
 }
 
 .tiptap h1 {
-  margin: 0 0 3rem;
+  margin: 1em 0 16px 0;
   font-size: 2.4em;
   line-height: 1.4em;
   font-weight: 600;
@@ -131,7 +131,7 @@
 .tiptap h2 {
   font-size: 1.5em;
   font-weight: 600;
-  margin: 2.8em 0 0.8em;
+  margin: 1em 0 16px 0;
   padding-bottom: 0.7em;
   width: 100%;
 }
@@ -139,22 +139,22 @@
 .tiptap h3 {
   font-size: 1.2em;
   font-weight: 600;
-  margin: 3rem 0 1.25rem 0;
+  margin: 1em 0 16px 0;
 }
 
 .tiptap h4 {
   font-size: 1em;
-  margin: 1em 0;
+  margin: 1em 0 16px 0;
 }
 
 .tiptap h5 {
   font-size: 0.85em;
-  margin: 1em 0;
+  margin: 1em 0 16px 0;
 }
 
 .tiptap h6 {
   font-size: 0.7em;
-  margin: 1em 0;
+  margin: 1em 0 16px 0;
 }
 
 .tiptap hr {

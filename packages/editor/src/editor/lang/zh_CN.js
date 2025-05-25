@@ -4,7 +4,7 @@ export default {
     redo: '重做',
     bold: '强调',
     italic: '倾斜',
-    strike: '删除线',
+    strikethrough: '删除线',
     underline: '下划线',
     subscript: '下标',
     superscript: '上标',
@@ -30,7 +30,8 @@ export default {
     splitCell: '拆分单元格',
     mergeCells: '合并单元格',
     horizontalRule: '插入水平线',
-    insertImage: '插入图片',
+    insertNetworkImage: '插入网络图片',
+    uploadLocalImage: '上传本地图片',
   },
   insertNetworkImageDialog: {
     title: '图片',

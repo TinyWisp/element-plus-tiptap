@@ -59,9 +59,6 @@ export default {
         this.colNum++
       }
     },
-    hide() {
-      this.$emit('input', false)
-    },
     cancel() {
       this.hide()
     },
@@ -70,7 +67,6 @@ export default {
         row: this.curRow,
         col: this.curCol,
       })
-      this.hide()
     },
     doNothing() {},
   },

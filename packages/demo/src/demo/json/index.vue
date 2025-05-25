@@ -1,14 +1,3 @@
-<script setup>
-import { ref } from 'vue'
-import { ElementPlusTiptap } from 'element-plus-tiptap'
-import 'element-plus-tiptap/dist/theme.css'
-
-const content = ref({
-  type: 'doc',
-  content: [{ type: 'paragraph', content: [{ type: 'text', text: 'hello world!' }] }],
-})
-</script>
-
 <template>
   <el-input
     :model-value="JSON.stringify(content)"
@@ -22,3 +11,14 @@ const content = ref({
     <element-plus-tiptap v-model="content" type="json" />
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import { ElementPlusTiptap } from 'element-plus-tiptap'
+import 'element-plus-tiptap/dist/theme.css'
+
+const content = ref({
+  type: 'doc',
+  content: [{ type: 'paragraph', content: [{ type: 'text', text: 'hello world!' }] }],
+})
+</script>

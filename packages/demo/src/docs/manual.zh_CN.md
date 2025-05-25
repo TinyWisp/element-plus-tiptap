@@ -20,62 +20,83 @@ import 'element-plus-tiptap/dist/theme.css'
 **基础用法**
 
 ```iframe
-#/demo?name=getting-started
+/element-plus-tiptap/demo?name=getting-started
 ```
 
 ## 自定义工具栏
 
 ```iframe
-#/demo?name=custom-toolbar
+/element-plus-tiptap/demo?name=custom-toolbar
 ```
 
-## 高度自增长
+## 语言
+
+### 中文
 
 ```iframe
-#/demo?name=auto-height
+/element-plus-tiptap/demo?name=chinese
 ```
 
-## 自定义语言
+### 自定义语言
+
+目前只提供了`英语`和`简体中文`，可以用locale="en"和locale="zh_CN"来设置。
+如果需要其他语言的话，则需要使用locale和langResource这两个参数来实现。
 
 ```iframe
-#/demo?name=lang
+/element-plus-tiptap/demo?name=lang
+```
+
+## 外观
+
+### 尺寸
+
+```iframe
+/element-plus-tiptap/demo?name=size
+```
+
+### 高度自增长
+
+```iframe
+/element-plus-tiptap/demo?name=auto-height
 ```
 
 ## 输入/输出格式
 
-**html**
+### html
 
 ```iframe
-#/demo?name=html
+/element-plus-tiptap/demo?name=html
 ```
 
-**json**
+### json
 
 ```iframe
-#/demo?name=json
+/element-plus-tiptap/demo?name=json
 ```
 
-**markdown**
+### markdown
 
 ```iframe
-#/demo?name=markdown
+/element-plus-tiptap/demo?name=markdown
 ```
 
 ## API
 
-**属性**
+### 属性
 
-| 属性名       | 类型    | 说明                         | 默认值                | 备注                  |
-| ------------ | ------- | ---------------------------- | --------------------- | --------------------- |
-| type         | string  | 枚举值: html, json, markdown | html                  | -                     |
-| editable     | boolean | 是否可编辑                   | true                  | -                     |
-| items        | array   | 工具栏项                     | ['undo', 'redo', ...] | -                     |
-| exts         | array   | tiptap的扩展                 | []                    | -                     |
-| options      | object  | tiptap的配置项               | {}                    | -                     |
-| locale       | string  | 语言                         | en                    | 内置的语言有en, zh_CN |
-| langResource | object  | 语言资源                     | -                     | -                     |
-| hideToolbar  | boolean | 是否隐藏工具栏               | false                 | -                     |
-| autoHeight   | boolean | 高度是否随内容自动增长       | false                 | -                     |
+| 属性名           | 类型             | 说明                                                                           | 默认值                | 备注                  |
+| ---------------- | ---------------- | ------------------------------------------------------------------------------ | --------------------- | --------------------- |
+| type             | string           | 枚举值: html, json, markdown                                                   | html                  | -                     |
+| editable         | boolean          | 是否可编辑                                                                     | true                  | -                     |
+| items            | array            | 工具栏项                                                                       | ['undo', 'redo', ...] | -                     |
+| exts             | array            | tiptap的扩展                                                                   | []                    | -                     |
+| options          | object           | tiptap的配置项                                                                 | {}                    | -                     |
+| locale           | string           | 语言                                                                           | en                    | 内置的语言有en, zh_CN |
+| langResource     | object           | 语言资源                                                                       | -                     | -                     |
+| hideToolbar      | boolean          | 是否隐藏工具栏                                                                 | false                 | -                     |
+| autoHeight       | boolean          | 高度是否随内容自动增长                                                         | false                 | -                     |
+| fnUploadImage    | (file) => string | 一个方法，上传图片且返回其地址                                                 |                       |                       |
+| enablePasteImage | boolean          | 是否在粘贴时上传图片，如果为true,则通过fnUploadImage上传并在编辑器中展示该图片 | true                  |                       |
 
 **items属性**
 
