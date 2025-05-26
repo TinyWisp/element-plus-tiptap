@@ -1,3 +1,9 @@
+- 1.0.6
+
+  - fixed:
+    - the error messages of the the link dialog's fields weren't right.
+    - the title field of the link dialog was not required.
+
 - 1.0.5
 
   - fixed:

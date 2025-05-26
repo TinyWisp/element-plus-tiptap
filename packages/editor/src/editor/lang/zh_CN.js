@@ -58,12 +58,13 @@ export default {
       title: {
         label: '标题',
         placeholder: '请输入标题',
+        emptyErr: '请输入链接标题',
       },
       url: {
         label: '地址',
         placeholder: 'https://',
-        emptyErr: '请输入图片地址',
-        invalidErr: '图片地址必须以http://或https://开头',
+        emptyErr: '请输入链接地址',
+        invalidErr: '链接地址必须以http://或https://开头',
       },
     },
   },

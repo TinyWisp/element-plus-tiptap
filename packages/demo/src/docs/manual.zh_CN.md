@@ -20,13 +20,13 @@ import 'element-plus-tiptap/dist/theme.css'
 **基础用法**
 
 ```iframe
-/element-plus-tiptap/demo?name=getting-started
+/element-plus-tiptap/#/demo?name=getting-started
 ```
 
 ## 自定义工具栏
 
 ```iframe
-/element-plus-tiptap/demo?name=custom-toolbar
+/element-plus-tiptap/#/demo?name=custom-toolbar
 ```
 
 ## 语言
@@ -34,7 +34,7 @@ import 'element-plus-tiptap/dist/theme.css'
 ### 中文
 
 ```iframe
-/element-plus-tiptap/demo?name=chinese
+/element-plus-tiptap/#/demo?name=chinese
 ```
 
 ### 自定义语言
@@ -43,7 +43,7 @@ import 'element-plus-tiptap/dist/theme.css'
 如果需要其他语言的话，则需要使用locale和langResource这两个参数来实现。
 
 ```iframe
-/element-plus-tiptap/demo?name=lang
+/element-plus-tiptap/#/demo?name=lang
 ```
 
 ## 外观
@@ -51,13 +51,13 @@ import 'element-plus-tiptap/dist/theme.css'
 ### 尺寸
 
 ```iframe
-/element-plus-tiptap/demo?name=size
+/element-plus-tiptap/#/demo?name=size
 ```
 
 ### 高度自增长
 
 ```iframe
-/element-plus-tiptap/demo?name=auto-height
+/element-plus-tiptap/#/demo?name=auto-height
 ```
 
 ## 输入/输出格式
@@ -65,19 +65,19 @@ import 'element-plus-tiptap/dist/theme.css'
 ### html
 
 ```iframe
-/element-plus-tiptap/demo?name=html
+/element-plus-tiptap/#/demo?name=html
 ```
 
 ### json
 
 ```iframe
-/element-plus-tiptap/demo?name=json
+/element-plus-tiptap/#/demo?name=json
 ```
 
 ### markdown
 
 ```iframe
-/element-plus-tiptap/demo?name=markdown
+/element-plus-tiptap/#/demo?name=markdown
 ```
 
 ## API

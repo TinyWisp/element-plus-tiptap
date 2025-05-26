@@ -20,13 +20,13 @@ import 'element-plus-tiptap/dist/theme.css'
 **Basic Usage**
 
 ```iframe
-/element-plus-tiptap/demo?name=getting-started
+/element-plus-tiptap/#/demo?name=getting-started
 ```
 
 ## Custom Toolbar
 
 ```iframe
-/element-plus-tiptap/demo?name=custom-toolbar
+/element-plus-tiptap/#/demo?name=custom-toolbar
 ```
 
 ## Language
@@ -34,7 +34,7 @@ import 'element-plus-tiptap/dist/theme.css'
 ### Simplified Chinese
 
 ```iframe
-/element-plus-tiptap/demo?name=chinese
+/element-plus-tiptap/#/demo?name=chinese
 ```
 
 ### Custom Language
@@ -42,7 +42,7 @@ import 'element-plus-tiptap/dist/theme.css'
 Currently, only English and Simplified Chinese are supported, and you can set them using `locale="en"` and `locale="zh_CN"`. If other languages are needed, the parameters `locale` and `langResource` must be used together to achieve this.
 
 ```iframe
-/element-plus-tiptap/demo?name=lang
+/element-plus-tiptap/#/demo?name=lang
 ```
 
 ## Appearence
@@ -50,13 +50,13 @@ Currently, only English and Simplified Chinese are supported, and you can set th
 ### Size
 
 ```iframe
-/element-plus-tiptap/demo?name=size
+/element-plus-tiptap/#/demo?name=size
 ```
 
 ### Auto Height
 
 ```iframe
-/element-plus-tiptap/demo?name=auto-height
+/element-plus-tiptap/#/demo?name=auto-height
 ```
 
 ## Input/Output Format
@@ -64,19 +64,19 @@ Currently, only English and Simplified Chinese are supported, and you can set th
 ### html
 
 ```iframe
-/element-plus-tiptap/demo?name=html
+/element-plus-tiptap/#/demo?name=html
 ```
 
 ### json
 
 ```iframe
-/element-plus-tiptap/demo?name=json
+/element-plus-tiptap/#/demo?name=json
 ```
 
 ### markdown
 
 ```iframe
-/element-plus-tiptap/demo?name=markdown
+/element-plus-tiptap/#/demo?name=markdown
 ```
 
 ## API

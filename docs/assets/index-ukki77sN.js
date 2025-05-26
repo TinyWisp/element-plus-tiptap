@@ -1,1 +1,0 @@
-import{r as a,c as r,o as t,u as n,h as u}from"./index-OTFb-H7q.js";/* empty css              */const d={__name:"index",setup(s){const e=a("hello world");return(m,o)=>(t(),r(n(u),{modelValue:e.value,"onUpdate:modelValue":o[0]||(o[0]=l=>e.value=l)},null,8,["modelValue"]))}};export{d as default};

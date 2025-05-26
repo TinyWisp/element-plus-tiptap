@@ -42,13 +42,20 @@ export default defineComponent({
         url: [
           {
             required: true,
-            message: this.t('insertLinkDialog.urlFieldIsEmptyErr'),
+            message: this.t('insertLinkDialog.field.url.emptyErr'),
             trigger: 'blur',
           },
           {
             pattern: /^(http|https):\/\/.+$/,
-            message: this.t('insertLinkDialog.urlFieldIsInvalidErr'),
+            message: this.t('insertLinkDialog.field.url.invalidErr'),
             trigger: 'change',
+          },
+        ],
+        title: [
+          {
+            required: true,
+            message: this.t('insertLinkDialog.field.title.emptyErr'),
+            trigger: 'blur',
           },
         ],
       },
